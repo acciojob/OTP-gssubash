@@ -1,4 +1,3 @@
-//your JS code here. If required.
 const container = document.querySelector(".code-container");
 
 function onInput(event) {
@@ -39,6 +38,7 @@ for (let i = 1; i <= noOfInput; i++) {
   const inputs = document.createElement("input");
   inputs.maxLength = 1;
   inputs.className = "code";
+  inputs.id = `code-${i}`;
   inputs.addEventListener("input", onInput);
   inputs.addEventListener("keyup", keyUps);
   container.appendChild(inputs);
