@@ -1,45 +1,34 @@
-const container = document.querySelector(".code-container");
+const [container] = document.getElementsByClassName("code-container");
 
-function onInput(event) {
-  console.log("Event triggered");
-  const curElement = event.target;
-  if (curElement.value) {
-    lastEnteredValue = curElement;
+let inputCount = 6;
 
-    curElement.nextElementSibling && curElement.nextElementSibling.focus();
+
+
+for (let i = 1; i <= inputCount; i++) {
+  const inputItem = document.createElement("input");
+  inputItem.classList.add("code");
+  inputItem.id = i;
+  inputItem.placeholder = "0";
+  inputItem.maxLength = 1;
+
+  inputItem.addEventListener("input", onInput);
+  inputItem.addEventListener("keyup", onkeyUp);
+
+  container.appendChild(inputItem);
+}
+
+function onInput(e) {
+  const currentElement = e.target;
+  const nextElement = currentElement.nextElementSibling;
+  if (currentElement.value && nextElement) {
+    nextElement.focus();
   }
 }
 
-function onBackspace(event) {
-  const e = event.target;
-
-  console.log("inside backspace");
-
-  e.value = "";
-  e.previousElementSibling && e.previousElementSibling.focus();
-}
-
-function onEnter(event) {
-  console.log('inside Enter');
-  event.target.nextElementSibling && event.target.nextElementSibling.focus();
-}
-
-function keyUps(event) {
-  if (event.key === "Enter") {
-    onEnter(event);
-  } else if (event.key === "Backspace") {
-    onBackspace(event);
+function onkeyUp(e) {
+  const currentElement = e.target;
+  const previousElement = currentElement.previousElementSibling;
+  if (currentElement.value == "" && e.key === "Backspace" && previousElement) {
+    previousElement.focus();
   }
-}
-
-let noOfInput = 6;
-
-for (let i = 1; i <= noOfInput; i++) {
-  const inputs = document.createElement("input");
-  inputs.maxLength = 1;
-  inputs.className = "code";
-  inputs.id = `code-${i}`;
-  inputs.addEventListener("input", onInput);
-  inputs.addEventListener("keyup", keyUps);
-  container.appendChild(inputs);
 }

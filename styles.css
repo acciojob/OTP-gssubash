@@ -1,53 +1,65 @@
-/*  your css code here. If applicable */
-*{
-  margin: 0px;
+* {
   padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-.main-container{
+.center-flex {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 830px;
-  height: 400px;
-  /* background-color: red; */
-  margin-inline: auto;
-  /* text-align: center; */
-  gap: 10px;
-  border: 3px solid black;
-  border-radius: 10px;
-  padding-top: 30px;
 }
 
-.code-container{
-  display: inline-flex;
-  width: 90%;
-  height: 28%;
-  /* background-color: blue; */
-  margin-inline: auto;
-  justify-content: space-between  ;
-  gap: 10px;
+.main-container {
+  width: auto;
+  height: auto;
+  padding: 50px;
+  margin: 50px;
+  border: 5px solid;
+  border-radius: 10px;
+  flex-direction: column;
 }
 
-.code{  
-  width: 80px;
-  height: 100%;
-  font-size: 4rem;
-  /* background-color: orange; */
-  border: 1px solid #e7e7e7;
+.code-container {
+  /* width: 90%; */
+  height: 240px;
   border-radius: 10px;
+  padding: 20px;
+  gap: 20px;
+}
+#verification_heading {
+  margin-top: 25px;
+  font-size: 32px;
+}
+
+#verification_subtext {
+  margin-top: 15px;
+  font-size: 24px;
+}
+
+.code {
+  height: 90%;
+  width: 15%;
+  margin: 5px;
+  border-radius: 5px;
+  /* border: 2px solid black; */
+  border: none;
+  font-size: clamp(1rem, 5rem, 8rem);
   text-align: center;
-  color: #757575;
-  box-shadow: 0px 0px 10px #e2e2e2;
+  box-shadow: 2px 2px 6px #b7b7b7, 1px 1px 3px #e7e7e7;
 }
 
-.code:focus{
+.code:focus {
   outline: 1px solid blue;
 }
 
-#bottom-msg{
-  width: 52%;
-  margin: auto;
+.info-container {
+  font: 24px;
+  padding: 20px;
+  width: 40%;
+  border-radius: 10px;
   background-color: #e7e7e7;
   text-align: center;
+  margin: 30px;
 }
