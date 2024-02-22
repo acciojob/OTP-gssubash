@@ -7,7 +7,7 @@ let inputCount = 6;
 for (let i = 1; i <= inputCount; i++) {
   const inputItem = document.createElement("input");
   inputItem.classList.add("code");
-  inputItem.id = i;
+  inputItem.id = "code-"+i;
   inputItem.placeholder = "0";
   inputItem.maxLength = 1;
 
