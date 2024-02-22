@@ -11,6 +11,7 @@ for (let i = 1; i <= inputCount; i++) {
   inputItem.placeholder = "0";
   inputItem.maxLength = 1;
 
+	inputItem.addEventListener('focus',()=>{});
   inputItem.addEventListener("input", onInput);
   inputItem.addEventListener("keyup", onkeyUp);
   inputItem.addEventListener("keyup", onEnterKey);
