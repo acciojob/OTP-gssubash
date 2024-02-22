@@ -13,6 +13,7 @@ for (let i = 1; i <= inputCount; i++) {
 
   inputItem.addEventListener("input", onInput);
   inputItem.addEventListener("keyup", onkeyUp);
+  inputItem.addEventListener("keyup", onEnterKey);
 
   container.appendChild(inputItem);
 }
@@ -30,5 +31,13 @@ function onkeyUp(e) {
   const previousElement = currentElement.previousElementSibling;
   if (currentElement.value == "" && e.key === "Backspace" && previousElement) {
     previousElement.focus();
+  }
+}
+
+function onEnterKey(e) {
+	const currentElement = e.target;
+  const nextElement = currentElement.nextElementSibling;
+  if (currentElement.value && e.key === "Enter" && nextElement) {
+    nextElement.focus();
   }
 }
